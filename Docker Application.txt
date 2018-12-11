@@ -1,0 +1,92 @@
+$ sudo
+
+Clean screen
+$ Reset or clear
+
+Type docker without sudo and without installing docker
+
+$ docker
+ 
+
+Install docker 
+$ sudo apt-get update && sudo apt-get install -y docker.io
+
+Now type docker again 
+$ docker
+ 
+List all images of docker
+$ docker images
+ 
+
+“Got permission denied”, now we understand we need to use sudo with every command as we don’t have permission without sudo, so let’s list all images of docker using sudo
+
+List all images of docker
+$ sudo docker images
+
+Type sudo bash so we don’t need to type sudo with each command
+$ sudo bash
+ 
+Type exit to exit from the root user
+# exit
+ 
+sudo allows users to run programs with the security privileges of another user (normally the superuser, or root).
+bash starts a new bash shell.
+So, sudo bash starts a new bash shell with the security privilege of root user.
+
+
+
+Run hello world image to know we are working correctly 
+$ sudo docker run hello-world
+ 
+Uninstall docker then install docker again
+$ sudo apt-get remove docker docker-engine docker.io
+
+Try to see docker help
+$ sudo docker run --help
+
+
+Type docker ps (process) to see all running images (no images running)
+$ sudo docker ps
+ 
+
+Go to Docker hub
+https://hub.docker.com/explore/
+
+Select nginx image and see the pull command
+
+Pull this image from Docker hub
+$ sudo docker pull nginx
+
+
+List docker images
+$ sudo docker images
+
+
+Run the container of nginx image
+$ sudo docker run nginx
+
+From another PuTTy see Docker process, you should see now nginx container is running
+$ sudo docker ps
+
+
+On the root, access the process tree, you should see the running container and what is inside
+$ sudo pstree
+
+Stop the container by type docker stop and give the container ID which you can get from docker images
+$ sudo docker stop ee3434341
+
+
+$ sudo docker pull php:7.2-apache
+$ sudo docker images |grep php // for specific image
+
+$sudo docker pull mysql:5.6
+
+$sudo docker ps
+
+$sudo docker ps -a
+
+$ sudo docker rm $(docker ps -a)
+
+sudo -i or sudo bash will take us to the root directory 
+
+//To check whether mysql is running or not in the root:#service mysql status
